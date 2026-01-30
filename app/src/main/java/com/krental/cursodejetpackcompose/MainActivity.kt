@@ -44,10 +44,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
-                MiTexto()
-                //MiButton()
-                //MiOutlinedButton()
-                //MiTextButton()
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    MiTexto()
+                    //MiButton()
+                    //MiOutlinedButton()
+                    //MiTextButton()
+                }
             }
         }
     }

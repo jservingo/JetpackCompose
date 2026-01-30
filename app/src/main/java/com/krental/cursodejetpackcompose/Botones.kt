@@ -25,72 +25,48 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun MiButton() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    Button(
+        onClick = { },
+        colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary
+        ),
+        shape = RoundedCornerShape(15.dp)
     ) {
-        Button(
-            onClick = { },
-            colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = MaterialTheme.colorScheme.onPrimary
-            ),
-            shape = RoundedCornerShape(15.dp)
-        ) {
-            Icon(Icons.Default.Person,contentDescription="Icono persona")
-            Text(text="Presionar")
-        }
+        Icon(Icons.Default.Person,contentDescription="Icono persona")
+        Text(text="Presionar")
     }
 }
 
 @Composable
 fun MiOutlinedButton() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    OutlinedButton(
+        onClick = { },
+        colors = ButtonDefaults.outlinedButtonColors(
+            containerColor = MaterialTheme.colorScheme.background,
+            contentColor = MaterialTheme.colorScheme.primary
+        ),
+        shape = RoundedCornerShape(15.dp),
+        border = BorderStroke(2.dp,MaterialTheme.colorScheme.primary),
+        modifier = Modifier.shadow(4.dp, shape=RoundedCornerShape(15.dp))
     ) {
-        OutlinedButton(
-            onClick = { },
-            colors = ButtonDefaults.outlinedButtonColors(
-                containerColor = MaterialTheme.colorScheme.background,
-                contentColor = MaterialTheme.colorScheme.primary
-            ),
-            shape = RoundedCornerShape(15.dp),
-            border = BorderStroke(2.dp,MaterialTheme.colorScheme.primary),
-            modifier = Modifier.shadow(4.dp, shape=RoundedCornerShape(15.dp))
-        ) {
-            Icon(Icons.Default.Favorite,
-                contentDescription =" Icono de favoritos",
-                modifier = Modifier.size(25.dp)
-            )
-            Text(text="Favoritos")
-        }
+        Icon(Icons.Default.Favorite,
+            contentDescription =" Icono de favoritos",
+            modifier = Modifier.size(25.dp)
+        )
+        Text(text="Favoritos")
     }
 }
 
 @Composable
 fun MiTextButton() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    // Este boton se utiliza para crear enlaces
+    TextButton(
+        onClick = { },
+        colors = ButtonDefaults.textButtonColors(
+            contentColor = MaterialTheme.colorScheme.primary
+        )
     ) {
-        // Este boton se utiliza para crear enlaces
-        TextButton(
-            onClick = { },
-            colors = ButtonDefaults.textButtonColors(
-                contentColor = MaterialTheme.colorScheme.primary
-            )
-        ) {
-            Text(text="Presione aquí")
-        }
+        Text(text="Presione aquí")
     }
 }
