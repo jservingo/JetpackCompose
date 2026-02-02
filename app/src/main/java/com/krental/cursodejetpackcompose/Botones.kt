@@ -33,7 +33,10 @@ fun MiButton() {
         ),
         shape = RoundedCornerShape(15.dp)
     ) {
-        Icon(Icons.Default.Person,contentDescription="Icono persona")
+
+        Icon(
+            Icons.Default.Person,
+            contentDescription="Icono persona")
         Text(text="Presionar")
     }
 }

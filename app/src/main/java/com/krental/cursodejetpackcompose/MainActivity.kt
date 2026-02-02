@@ -47,7 +47,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
-                ComponentRow()
+                // --------------------
+                // Componentes
+                ComponentBox()
+                //ComponentRow()
                 //ComponentColumn()
                 /*
                 Column(
@@ -69,8 +72,8 @@ class MainActivity : ComponentActivity() {
                     Text(text="Seccion 2",
                         style=MaterialTheme.typography.bodyLarge)
                      */
-                    /* ----------------
-                    Botones
+                    // ----------------
+                    //Botones
                     MiButton()
                     Spacer(modifier = Modifier.height(30.dp))
                     MiOutlinedButton()
@@ -80,7 +83,7 @@ class MainActivity : ComponentActivity() {
                     MiImage()
                     Spacer(modifier = Modifier.height(30.dp))
                     MiIcon()
-                    */
+                    //
                     /* -----------------
                     MiText y MiTextoReitilizable
                     MiTexto()
