@@ -47,11 +47,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
+                MyLazyColumn()
                 // --------------------
                 // Componentes
+                /*
                 ComponentBox()
                 //ComponentRow()
                 //ComponentColumn()
+                */
                 /*
                 Column(
                     modifier = Modifier
