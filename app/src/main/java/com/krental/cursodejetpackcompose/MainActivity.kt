@@ -47,9 +47,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
-                MyLazyColumn()
+                // Lazy: Column Row HorizontalGrid
+                MyLazyRow()
+                //MyLazyColumn()
                 // --------------------
-                // Componentes
+                // Layouts: Column Row Box
                 /*
                 ComponentBox()
                 //ComponentRow()
@@ -64,7 +66,7 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally //Start End
                 ) {
                     /* -----------------
-                    Image Icon Spacer Divider
+                    HorizontalDivider
                     Text(text="Seccion 1",
                         style = MaterialTheme.typography.bodyLarge)
                     HorizontalDivider(
@@ -74,9 +76,9 @@ class MainActivity : ComponentActivity() {
                     )
                     Text(text="Seccion 2",
                         style=MaterialTheme.typography.bodyLarge)
-                     */
-                    // ----------------
-                    //Botones
+                    */
+                    /* ----------------
+                    Buttons Image Icon Spacer
                     MiButton()
                     Spacer(modifier = Modifier.height(30.dp))
                     MiOutlinedButton()
@@ -86,7 +88,7 @@ class MainActivity : ComponentActivity() {
                     MiImage()
                     Spacer(modifier = Modifier.height(30.dp))
                     MiIcon()
-                    //
+                    */
                     /* -----------------
                     MiText y MiTextoReitilizable
                     MiTexto()
@@ -97,5 +99,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
