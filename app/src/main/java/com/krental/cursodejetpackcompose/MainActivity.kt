@@ -48,7 +48,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 // Lazy: Column Row HorizontalGrid
-                MyLazyRow()
+                MyLazyRowImages()
+                //MyLazyRowText()
                 //MyLazyColumn()
                 // --------------------
                 // Layouts: Column Row Box
