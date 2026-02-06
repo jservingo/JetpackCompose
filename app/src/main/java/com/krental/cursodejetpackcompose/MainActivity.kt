@@ -47,8 +47,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
-                // Lazy: Column Row HorizontalGrid
-                MyLazyRowImagesWeb()
+                // Lazy: Column Row VerticalGrid HorizontalGrid
+                MyLazyVerticalGrid()
+                //MyLazyRowImagesWeb()
                 //MyLazyRowImages()
                 //MyLazyRowText()
                 //MyLazyColumn()
