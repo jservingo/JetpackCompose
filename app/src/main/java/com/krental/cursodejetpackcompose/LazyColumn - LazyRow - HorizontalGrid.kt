@@ -25,6 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 
 @Composable
 fun MyLazyColumn() {
@@ -107,6 +108,39 @@ fun MyLazyRowImages() {
             Image(
                 painter = painterResource(id = item),
                 contentDescription = "Imagen $item",
+                modifier = Modifier
+                    .size(180.dp)
+                    .clip(RoundedCornerShape(16.dp)),
+                contentScale = ContentScale.Crop
+            )
+        }
+    }
+}
+
+@Composable
+fun MyLazyRowImagesWeb() {
+    // Implementación similar a MyLazyRowText pero con imágenes desde la web
+    val listOfImages = listOf(
+        "https://picsum.photos/id/237/200/300",
+        "https://picsum.photos/id/238/200/300",
+        "https://picsum.photos/id/239/200/300",
+        "https://picsum.photos/id/240/200/300",
+        "https://picsum.photos/id/241/200/300",
+        "https://picsum.photos/id/242/200/300",
+    )
+
+    LazyRow(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        items(listOfImages) { item->
+            // Aquí iría el código para mostrar la imagen desde la web
+            // Usualmente se usaría una librería como Coil o Glide para cargar imágenes desde URLs
+            AsyncImage(
+                model = item,
+                contentDescription = "Imagen desde la web",
                 modifier = Modifier
                     .size(180.dp)
                     .clip(RoundedCornerShape(16.dp)),
