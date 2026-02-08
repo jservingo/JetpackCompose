@@ -3,7 +3,9 @@ package com.krental.cursodejetpackcompose
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,6 +24,27 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
+
+@Composable
+fun MisBotones() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center, //Top Bottom SpaceBetween SpaceEvenly
+        horizontalAlignment = Alignment.CenterHorizontally //Start End
+    ) {
+        MiButton()
+        Spacer(modifier = Modifier.height(30.dp))
+        MiOutlinedButton()
+        Spacer(modifier = Modifier.height(30.dp))
+        MiTextButton()
+        Spacer(modifier = Modifier.height(30.dp))
+        MiImage()
+        Spacer(modifier = Modifier.height(30.dp))
+        MiIcon()
+    }
+}
 
 @Composable
 fun MiButton() {

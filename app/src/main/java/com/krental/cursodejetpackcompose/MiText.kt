@@ -20,56 +20,65 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun MiTexto() {
-    /*
-    Text(text = "Soy un texto",
-        color = Color.Blue,
-        fontSize = 20.sp,
-        fontWeight = FontWeight.Bold,
-        textAlign = TextAlign.Center
-    )
-    */
-    Text(text = "Soy un texto",
-        style = MaterialTheme.typography.headlineMedium.copy(
-            fontFamily = FontFamily.Serif,
-            fontSize = 55.sp,
-            fontWeight = FontWeight.Thin
-        ),
-        color = MaterialTheme.colorScheme.primary
-    )
-
-    MiTextoReutilizable(
-        text = "Texto reutilizable",
-        fontSize = 30.sp
-    )
-
-    MiTextoReutilizable(
-        text = "Texto reutilizable 2",
-        color = MaterialTheme.colorScheme.secondary,
-        fontFamily = FontFamily.Monospace,
-        fontSize = 25.sp
-    )
-
-    Text(
-        text = "Texto con modificadores",
-        fontSize = 25.sp,
+    Column(
         modifier = Modifier
-            .clickable {}
-            .background(Color.Green)
-            .border(2.dp, Color.Black)
-            .padding(16.dp)
-    )
-    /*
-    Text(text = "Encabezado grande",
-        style = MaterialTheme.typography.displayLarge,
-        color = MaterialTheme.colorScheme.primary
-    )
-    Text(text = "Cuerpo del texto",
-        style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.primary
-    )
-    Text(text = "Etiqueta pequeña",
-        style = MaterialTheme.typography.labelSmall,
-        color = MaterialTheme.colorScheme.primary
-    )
-    */
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center, //Top Bottom SpaceBetween SpaceEvenly
+        horizontalAlignment = Alignment.CenterHorizontally //Start End
+    ) {
+        /*
+        Text(text = "Soy un texto",
+            color = Color.Blue,
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
+        )
+        */
+        Text(
+            text = "Soy un texto",
+            style = MaterialTheme.typography.headlineMedium.copy(
+                fontFamily = FontFamily.Serif,
+                fontSize = 55.sp,
+                fontWeight = FontWeight.Thin
+            ),
+            color = MaterialTheme.colorScheme.primary
+        )
+
+        MiTextoReutilizable(
+            text = "Texto reutilizable",
+            fontSize = 30.sp
+        )
+
+        MiTextoReutilizable(
+            text = "Texto reutilizable 2",
+            color = MaterialTheme.colorScheme.secondary,
+            fontFamily = FontFamily.Monospace,
+            fontSize = 25.sp
+        )
+
+        Text(
+            text = "Texto con modificadores",
+            fontSize = 25.sp,
+            modifier = Modifier
+                .clickable {}
+                .background(Color.Green)
+                .border(2.dp, Color.Black)
+                .padding(16.dp)
+        )
+        /*
+        Text(text = "Encabezado grande",
+            style = MaterialTheme.typography.displayLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+        Text(text = "Cuerpo del texto",
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.primary
+        )
+        Text(text = "Etiqueta pequeña",
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.primary
+        )
+        */
+    }
 }
