@@ -13,7 +13,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Administracion de estados
-                RememberExample()
+                RememberSaveableExample()
+                //RememberExample()
                 // --------------------
                 //Card ElevatedCard
                 //MyElevatedCard()

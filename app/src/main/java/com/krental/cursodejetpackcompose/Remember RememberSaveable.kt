@@ -4,14 +4,19 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -63,10 +68,10 @@ fun RememberExample() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Text("Contador: $count", style = MaterialTheme.typography.bodyLarge)
         // Mostrar el valor del contador en un botón
         // Cada vez que se hace clic en el botón, el contador se incrementa
         // y el texto del botón se actualiza para reflejar el nuevo valor
-        Text("Contador: $count", style = MaterialTheme.typography.bodyLarge)
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -76,6 +81,55 @@ fun RememberExample() {
             //debido a la reactividad de Compose
 
             Text("Incrementar")
+        }
+    }
+}
+
+@Composable fun RememberSaveableExample() {
+    // Similar al ejemplo anterior, pero usando rememberSaveable para que
+    // el valor del contador persista a través de cambios de configuración
+    // como la rotación de pantalla
+
+    var myName by rememberSaveable { mutableStateOf("") }
+    // Al usar rememberSaveable, el valor del contador se guardará incluso
+    // si el composable se destruye y se vuelve a crear, lo que permite que
+    // el contador mantenga su valor a través de cambios de configuración
+    // como la rotación de pantalla.
+
+    //RememberSavable utiliza un mecanismo de persistencia que garantiza que
+    // el valor del contador se mantenga incluso si el composable se destruye
+    // y se vuelve a crear, lo que es útil para preservar el estado
+    // a través de cambios de configuración como la rotación de pantalla.
+
+    Column(
+        modifier = Modifier.fillMaxSize().padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("Ingrese su nombre", style = MaterialTheme.typography.titleMedium)
+        // Mostrar un campo de texto para ingresar el nombre
+
+        // Al usar rememberSaveable, el valor del campo de texto se conservará incluso
+        // si el composable se destruye y se vuelve a crear, lo que permite que
+        // el usuario mantenga su entrada a través de cambios de configuración
+        // como la rotación de pantalla.
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedTextField(
+            value = myName,
+            onValueChange = { myName = it },
+            label = { Text("Nombre") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        // El valor ingresado se almacena en el estado myName
+        // y se mantiene a través de recomposiciones y cambios de configuración
+        // gracias a rememberSaveable.
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = { myName="" }) {
+            Text("Borrar nombre")
         }
     }
 }
