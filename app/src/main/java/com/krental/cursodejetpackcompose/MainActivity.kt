@@ -12,9 +12,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
+                //Administracion de estados
+                RememberExample()
                 // --------------------
                 //Card ElevatedCard
-                MyElevatedCard()
+                //MyElevatedCard()
                 //MyCard()
                 // --------------------
                 //Lazy: Column Row VerticalGrid HorizontalGrid
