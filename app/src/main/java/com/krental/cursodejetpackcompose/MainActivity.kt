@@ -12,8 +12,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
+                DerivedStateOfExample()
+                //DerivedStateOf()
+                // --------------------
                 //Administracion de estados
-                SwitchStateHoisting()
+                //SwitchStateHoisting()
                 //StateHoisting()
                 //RememberSaveableExample()
                 //RememberExample()
