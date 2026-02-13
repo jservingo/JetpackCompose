@@ -86,20 +86,13 @@ fun RememberExample() {
 }
 
 @Composable fun RememberSaveableExample() {
-    // Similar al ejemplo anterior, pero usando rememberSaveable para que
-    // el valor del contador persista a través de cambios de configuración
-    // como la rotación de pantalla
+    // Aquí puedes usar rememberSaveable para almacenar un valor
+    // que persista a través de recomposiciones y también a través
+    // de cambios de configuración como rotaciones de pantalla.
 
     var myName by rememberSaveable { mutableStateOf("") }
-    // Al usar rememberSaveable, el valor del contador se guardará incluso
-    // si el composable se destruye y se vuelve a crear, lo que permite que
-    // el contador mantenga su valor a través de cambios de configuración
-    // como la rotación de pantalla.
-
-    //RememberSavable utiliza un mecanismo de persistencia que garantiza que
-    // el valor del contador se mantenga incluso si el composable se destruye
-    // y se vuelve a crear, lo que es útil para preservar el estado
-    // a través de cambios de configuración como la rotación de pantalla.
+    // Crear el estado del nombre utilizando rememberSaveable y
+    // mutableStateOf.
 
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -108,7 +101,6 @@ fun RememberExample() {
     ) {
         Text("Ingrese su nombre", style = MaterialTheme.typography.titleMedium)
         // Mostrar un campo de texto para ingresar el nombre
-
         // Al usar rememberSaveable, el valor del campo de texto se conservará incluso
         // si el composable se destruye y se vuelve a crear, lo que permite que
         // el usuario mantenga su entrada a través de cambios de configuración

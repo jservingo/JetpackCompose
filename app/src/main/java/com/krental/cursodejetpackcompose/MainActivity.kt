@@ -13,7 +13,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Administracion de estados
-                RememberSaveableExample()
+                SwitchStateHoisting()
+                //StateHoisting()
+                //RememberSaveableExample()
                 //RememberExample()
                 // --------------------
                 //Card ElevatedCard
