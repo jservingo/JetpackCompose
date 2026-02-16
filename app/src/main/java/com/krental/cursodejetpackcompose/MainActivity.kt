@@ -13,7 +13,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Componentes interactivos
-                TextFieldExample()
+                OutlinedTextFieldExample()
+                //TextFieldExample()
                 // --------------------
                 //Administracion de estados
                 //MutableStateListOfExample()
