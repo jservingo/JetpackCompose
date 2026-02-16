@@ -13,7 +13,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Componentes interactivos
-                OutlinedTextFieldExample()
+                PreferencesExample()
+                //CheckBoxExample()
+                //OutlinedTextFieldExample()
                 //TextFieldExample()
                 // --------------------
                 //Administracion de estados
