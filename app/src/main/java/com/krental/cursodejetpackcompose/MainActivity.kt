@@ -13,7 +13,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Componentes interactivos
-                SwitchExample()
+                LinearProgressIndicatorExample()
+                //SwitchExample()
                 //RadioButtonExample()
                 //PreferencesExample()
                 //CheckBoxExample()
