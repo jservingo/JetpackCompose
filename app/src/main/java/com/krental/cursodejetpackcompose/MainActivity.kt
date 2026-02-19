@@ -23,8 +23,9 @@ class MainActivity : ComponentActivity() {
                 //TextFieldExample()
                 // --------------------
                 //Administracion de estados
+                MutableStateMapOfExample()
                 //MutableStateListOfSaverExample()
-                MutableStateListOfExample()
+                //MutableStateListOfExample()
                 //DerivedStateOfExample()
                 //DerivedStateOf()
                 //SwitchStateHoisting()
