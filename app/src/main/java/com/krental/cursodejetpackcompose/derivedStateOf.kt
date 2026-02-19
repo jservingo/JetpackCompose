@@ -69,6 +69,7 @@ fun DerivedStateOfExample() {
     // valor del estado derivado realmente cambia.
 
     var text by rememberSaveable { mutableStateOf("") }
+
     val textColor by remember {
         derivedStateOf {
             if (text.length > 5) Color.Red else Color.Blue

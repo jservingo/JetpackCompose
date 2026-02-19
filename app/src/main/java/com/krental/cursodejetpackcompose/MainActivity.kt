@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Componentes interactivos
-                CanvasExample()
+                //CanvasExample()
                 //LinearProgressIndicatorExample()
                 //SwitchExample()
                 //RadioButtonExample()
@@ -23,7 +23,8 @@ class MainActivity : ComponentActivity() {
                 //TextFieldExample()
                 // --------------------
                 //Administracion de estados
-                //MutableStateListOfExample()
+                //MutableStateListOfSaverExample()
+                MutableStateListOfExample()
                 //DerivedStateOfExample()
                 //DerivedStateOf()
                 //SwitchStateHoisting()
