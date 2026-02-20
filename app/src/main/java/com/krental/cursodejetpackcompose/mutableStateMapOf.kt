@@ -18,10 +18,43 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateMapOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.listSaver
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.snapshots.SnapshotStateMap
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+
+val mapSaver = listSaver<SnapshotStateMap<String,String>, Pair<String,String>>(
+    save = { it.toList() },
+        // Convierte el mapa mutable en una lista de pares clave-valor
+        // (List<Pair<String, String>>) para guardarlo. Esto es necesario
+        // porque los mapas no son directamente serializables,
+        // pero las listas de pares sí lo son, lo que permite que el estado
+        // del mapa se guarde correctamente durante cambios de configuración.
+    restore = {
+        val map = mutableStateMapOf<String, String>()
+        it.forEach { pair ->
+            val (key,value) = pair as Pair<String, String>
+            map[key] = value
+        }
+        map
+    }
+        // Convierte la lista de pares clave-valor de vuelta a un mapa mutable
+        // (Map<String, String>) al restaurar el estado. Esto asegura que el
+        // mapa se restaure correctamente con sus datos intactos después de
+        // cambios de configuración, como rotaciones de pantalla, manteniendo
+        // así la integridad de los datos del mapa a lo largo del ciclo de
+        // vida de la actividad.
+)
+// mapSaver es un saver personalizado que se utiliza para guardar y
+// restaurar un mapa mutable de tipo Map<String, String>. El saver
+// convierte el mapa en una lista de pares clave-valor (List<Pair
+// <String, String>>) para guardarlo, y luego restaura el mapa a
+// partir de esa lista cuando sea necesario. Esto es útil para
+// mantener el estado del mapa a través de cambios de configuración,
+// como rotaciones de pantalla, asegurando que los datos del mapa
+// se mantengan intactos durante el ciclo de vida de la actividad.
 
 @Composable
 fun MutableStateMapOfExample() {
@@ -37,7 +70,10 @@ fun MutableStateMapOfExample() {
     // y quieres que la UI se actualice sin problemas sin necesidad
     // de notificar manualmente los cambios.
 
-    val users = remember { mutableStateMapOf("user1" to "Alice", "user2" to "Bob") }
+    //val users = remember { mutableStateMapOf<String, String>("user1" to "Alice", "user2" to "Bob") }
+    val users = rememberSaveable(saver = mapSaver) {
+        mutableStateMapOf<String, String>()
+    }
     // En este ejemplo, users es un mapa mutable que se puede modificar
     // (agregar, eliminar o modificar elementos). Cada vez que se modifique
     // users, la UI que dependa de este mapa se recompondrá automáticamente
