@@ -13,7 +13,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Efectos Secudarios
-                LlamadaAPISimulada()
+                LaunchedEffectCounter()
+                //LaunchedEffectExample()
+                //LlamadaAPISimulada()
                 // --------------------
                 //Recomposicion
                 //ListaDeTareas()
