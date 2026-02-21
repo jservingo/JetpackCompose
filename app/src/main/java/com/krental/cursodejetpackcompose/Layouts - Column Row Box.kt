@@ -52,9 +52,18 @@ fun ComponentRow() {
         horizontalArrangement = Arrangement.SpaceBetween, //Start End Center SpaceEvenly
         verticalAlignment = Alignment.CenterVertically //Top Bottom
     ) {
+        /*
         MiOutlinedButton()
+        MiTextButton()
         MiImage()
         MiIcon()
+         */
+        Text("Elemento 1", modifier = Modifier.weight(1f))
+        Text("Elemento 2", modifier = Modifier.weight(1f))
+        Text("Elemento 3", modifier = Modifier.weight(1f))
+        Text("Elemento 4", modifier = Modifier.weight(1f))
+        Text("Elemento 5", modifier = Modifier.weight(1f))
+
     }
 }
 
@@ -80,8 +89,10 @@ fun ComponentBox() {
             {},
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(50
-                    .dp),
+                .padding(
+                    50
+                        .dp
+                ),
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.primary

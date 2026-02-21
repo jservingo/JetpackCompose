@@ -12,6 +12,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
+                // Recomposicion
+                ListaDeTareas()
+                // --------------------
                 //Componentes interactivos
                 //CanvasExample()
                 //LinearProgressIndicatorExample()
@@ -23,7 +26,7 @@ class MainActivity : ComponentActivity() {
                 //TextFieldExample()
                 // --------------------
                 //Administracion de estados
-                MutableStateMapOfExample()
+                //MutableStateMapOfExample()
                 //MutableStateListOfSaverExample()
                 //MutableStateListOfExample()
                 //DerivedStateOfExample()
