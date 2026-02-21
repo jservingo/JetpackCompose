@@ -12,8 +12,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CursoDeJetpackComposeTheme {
-                // Recomposicion
-                ListaDeTareas()
+                //Efectos Secudarios
+                LlamadaAPISimulada()
+                // --------------------
+                //Recomposicion
+                //ListaDeTareas()
                 // --------------------
                 //Componentes interactivos
                 //CanvasExample()
