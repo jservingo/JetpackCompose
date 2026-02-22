@@ -1,6 +1,5 @@
 package com.krental.cursodejetpackcompose
 
-import android.R.attr.top
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -55,7 +53,7 @@ fun listaInicialDeTareas(): List<Tarea> {
 fun ListaDeTareas() {
 
     var tareas by remember { mutableStateOf(listaInicialDeTareas()) }
-    //tareas es una variable de estado que contiene la lista de tareas. Al usar
+    // tareas es una variable de estado que contiene la lista de tareas. Al usar
     // remember y mutableStateOf, estamos diciendo que esta variable es reactiva,
     // lo que significa que cualquier cambio en esta variable hará que la UI se
     // recompondrá automáticamente para reflejar esos cambios.  En este caso,

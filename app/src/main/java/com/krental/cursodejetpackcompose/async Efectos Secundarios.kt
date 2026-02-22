@@ -21,7 +21,7 @@ import kotlinx.coroutines.delay
 
 suspend fun obtenerDatosAPI(): String {
     delay(5000)
-        //Suspende la ejecucion de la función sin bloquear el hilo
+        // Suspende la ejecucion de la función sin bloquear el hilo
         // princial, permitiendo que otras tareas se ejecuten en
         // paralelo
     return ("JSG Techologies")
