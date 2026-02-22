@@ -1,5 +1,6 @@
 package com.krental.cursodejetpackcompose
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,10 +21,12 @@ import kotlinx.coroutines.delay
 
 
 suspend fun obtenerDatosAPI(): String {
+    Log.d("Corrutina","Iniciando funcion suspendia")
     delay(5000)
         // Suspende la ejecucion de la función sin bloquear el hilo
         // princial, permitiendo que otras tareas se ejecuten en
         // paralelo
+    Log.d("Corrutina","Funcion suspendida terminada")
     return ("JSG Techologies")
 }
 
@@ -33,7 +36,10 @@ fun LlamadaAPISimulada() {
     var isLoading by remember { mutableStateOf(true) }
 
     LaunchedEffect(Unit) {
-        usuario = obtenerDatosAPI()
+        usuario = obtenerDatosAPI() //funcion suspendida
+        //Esta es una corrutina suspendia, ya que la funcion
+        //suspendida obtenerDatosAPI se detiene por el delay, y
+        //la corrutina tambien se detiene
         isLoading = false
     }
 
