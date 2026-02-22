@@ -13,7 +13,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Efectos Secudarios
-                SideEffectExample()
+                DisposableEffectExample()
+                //SideEffectExample()
                 //CorrutineScopeExample()
                 //rememberCoroutineScopeExample()
                 //LaunchedEffectCounter()
