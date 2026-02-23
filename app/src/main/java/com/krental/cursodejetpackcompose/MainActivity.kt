@@ -13,7 +13,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Efectos Secudarios
-                FrasesRandom()
+                SnapshotFlowExample()
+                //FrasesRandom()
                 //ProduceStateExample()
                 //RemembarUpdatedStateExample()
                 //DisposableEffectExample()
