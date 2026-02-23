@@ -13,7 +13,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CursoDeJetpackComposeTheme {
                 //Efectos Secudarios
-                RemembarUpdatedStateExample()
+                FrasesRandom()
+                //ProduceStateExample()
+                //RemembarUpdatedStateExample()
                 //DisposableEffectExample()
                 //SideEffectExample()
                 //CorrutineScopeExample()
